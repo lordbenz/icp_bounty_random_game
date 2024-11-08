@@ -24,7 +24,7 @@ function App() {
 
     await new Promise((resolve, reject) => {
       authClient.login({
-        identityProvider: "https://identity.ic0.app",
+        identityProvider: "https://identity.ic0.app", //TODO: (env)
         onSuccess: () => {
           setIsAuthenticated(true);
           resolve(null);
@@ -65,14 +65,14 @@ function App() {
 
       {isAuthenticated ? (
         <div>
-          <h2>Guess the Number (1-10)</h2>
+          <h2>Guess the Number (1-15)</h2>
           <form onSubmit={handleGuessSubmit}>
             <label htmlFor="guess">Enter your guess: &nbsp;</label>
             <input
               id="guess"
               type="number"
               min="1"
-              max="10"
+              max="15"
               value={guess}
               onChange={(e) => setGuess(e.target.value)}
               required
